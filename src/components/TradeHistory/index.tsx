@@ -202,12 +202,6 @@ const TradeHistory: FunctionComponent<TradeHistoryProps> = ({ windowWidth, produ
                     ))
                 )}
             </div>
-
-            {trades.length === 0 && (
-                <div style={styles.emptyState}>
-                    No trades yet
-                </div>
-            )}
         </div>
     );
 };
