@@ -49,6 +49,8 @@ const OrderBook: FunctionComponent<OrderBookProps> = ({ windowWidth, productId, 
   const processMessages = (event: { data: string; }) => {
     const response = JSON.parse(event.data);
 
+    // console.log('responseDelta', response)
+
     if (response.numLevels) {
       dispatch(addExistingState(response));
     } else {

@@ -6,19 +6,20 @@ import Footer from "./components/Footer";
 import StatusMessage from "./components/StatusMessage";
 import { clearOrdersState } from "./components/OrderBook/orderbookSlice";
 import { useAppDispatch } from "./hooks";
+import TradeHistory from './components/TradeHistory';
 
 export const ProductIds = {
-  XBTUSD: 'PI_XBTUSD',
+  XBTUSD: 'PF_XBTUSD',
   ETHUSD: 'PI_ETHUSD'
 };
 
 const options: any = {
-  PI_XBTUSD: [0.5, 1, 2.5],
+  PF_XBTUSD: [0.5, 1, 2.5],
   PI_ETHUSD: [0.05, 0.1, 0.25]
 };
 
 export const ProductsMap: any = {
-  "PI_XBTUSD": "PI_ETHUSD",
+  "PF_XBTUSD": "PF_XBTUSD",
   "PI_ETHUSD": "PI_XBTUSD",
 }
 
@@ -95,6 +96,8 @@ function App() {
         <OrderBook windowWidth={windowWidth} productId={productId} isFeedKilled={isFeedKilled} />
         <Footer toggleFeedCallback={toggleProductId} killFeedCallback={toggleFeed} isFeedKilled={isFeedKilled} />
         <StatusMessage isFeedKilled={isFeedKilled} selectedMarket={productId} />
+        <TradeHistory windowWidth={windowWidth} productId={productId} isFeedKilled={isFeedKilled}/>
+
       </> : 'HIDDEN PAGE.'}
     </>
   );

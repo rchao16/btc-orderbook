@@ -83,6 +83,9 @@ const addTotalSums = (orders: number[][]): number[][] => {
   const totalSums: number[] = [];
 
   return orders.map((order: number[], idx) => {
+
+    // console.log('order', order)
+
     const size: number = order[1];
     if (typeof order[2] !== 'undefined') {
       return order;
